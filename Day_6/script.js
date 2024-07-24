@@ -51,13 +51,13 @@ for(let i=0;i<array.length;i++){
     console.log(array[i])
 }
 
-// 11.forEach mathhod
+// 11.forEach mathhod-------------------------------
 
 array.forEach(j=>{
     console.log(j)
 })
 
-// multi-dimensional Array
+// multi-dimensional Array---------------------------------
 // 12.
 const list=[
     [1,2,3],

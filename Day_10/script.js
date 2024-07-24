@@ -1,6 +1,6 @@
 // Event Handling
 
-// Basic Element handling
+// Basic Element handling-------------------------------------------------------
 // 1.
 const btn1= document.querySelector('#btn1');
 btn1.addEventListener('click',()=>{
@@ -19,7 +19,7 @@ btn2.addEventListener('dblclick', () => {
    }
 });//------------------------------dblclick
 
-//Mouse Events
+//Mouse Events----------------------------------------------------
 // 3.
 const p1=document.querySelector('#p1')
 p1.addEventListener('mouseover',()=>{
@@ -31,7 +31,7 @@ p1.addEventListener('mouseout',()=>{
     p1.style.backgroundColor="lightblue"
 })//-------------------mouseout
 
-//Keyboard Event
+//Keyboard Event------------------------------------------------------
 // 5.
 const input1=document.querySelector("#input1");
 const heading1=document.querySelector("#h1")
@@ -47,7 +47,7 @@ input1.addEventListener("keyup",()=>{
     para.textContent=`current value: ${input1.value}`;
 });//---------------------------keyup
 
-//From Event
+//From Event-----------------------------------------------------------
 // 7.
 const submitForm=document.querySelector("#btn2");
 const form=document.querySelector("#form");
@@ -73,7 +73,7 @@ dropDown1.addEventListener("change",()=>{
 
 })//----------------------------change
 
-//Event Delegation
+//Event Delegation---------------------------------------------------------
 // 9.
 const itemList = document.getElementById('itemList');
 itemList.addEventListener('click',(event)=>{

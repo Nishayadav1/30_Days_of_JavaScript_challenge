@@ -1,6 +1,6 @@
 // DOM maniupulation 
 
-// selecting amd manipulating element
+// selecting amd manipulating element-----------------------------------------------
 // 1.
 const heading= document.getElementById("h");
 heading.textContent="hlw DOM maniupulation";
@@ -8,7 +8,7 @@ heading.textContent="hlw DOM maniupulation";
 // 2.
 heading.style.backgroundColor="yellow";
 
-// creating and Appending elements
+// creating and Appending elements-----------------------------------------------------
 // 3.
 const newDiv= document.createElement('div');
 document.body.appendChild(newDiv)
@@ -24,7 +24,7 @@ newli.innerText="hi I am";
 newul.appendChild(newli)
 
 
-// Removing element
+// Removing element----------------------------------------------------
 // 5.
 const back=document.querySelector('.cls')
 setTimeout(()=>{
@@ -37,7 +37,7 @@ if (newul.lastChild){
 }
 
 
-// Modifying Attribute and classes
+// Modifying Attribute and classes--------------------------------------
 // 7.
 const imgPic=document.querySelector('img');
 imgPic.src='p1.png';
@@ -50,7 +50,7 @@ imgChange.classList.add('img1');
  },3000);
 
 
-// Event Handling
+// Event Handling---------------------------------------------
 // 9.
 const btn=document.querySelector('.btn1');
 btn.addEventListener('click',()=>{

@@ -31,7 +31,7 @@ console.log(obj.methods())
 console.log(obj)
 
 
-// Nested objects
+// Nested objects-----------------------------------------
 // 5.
 let book1 = {
     title: "To Kill a Mockingbird",
@@ -83,7 +83,7 @@ for (let property in book) {
 }
 
 
-// 9.object.keys and object.values
+// 9.object.keys and object.values--------------------------------
 let keys=Object.keys(obj)
 let values=Object.values(obj)
 
