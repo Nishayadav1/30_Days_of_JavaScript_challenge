@@ -99,8 +99,8 @@ console.log(myVariable);     // Logs: 20
 
 
 // let
-let myVariable = 10;           // Initial value
-console.log(myVariable);       // Logs: 10
+let myVariable1 = 10;           // Initial value
+console.log(myVariable1);       // Logs: 10
 
 myVariable = 20;               // Reassigned value
 console.log(myVariable);       // Logs: 20
