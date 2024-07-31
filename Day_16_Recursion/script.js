@@ -1,7 +1,7 @@
 //Recursion
 
 
-// Basic recursion
+// Basic recursion--------------------------------------------------------------------------------------------
 // 1.
 function fact(n){
     if (n==0){
@@ -23,7 +23,7 @@ function fibonacci(n) {
 }
 console.log(fibonacci(15))
 
-//Recursion with arrays
+//Recursion with arrays-----------------------------------------------------------------------------------------
 // 3.
 function sumArray(arr) {
     if (arr.length === 0) {
@@ -43,7 +43,7 @@ function findMax(arr) {
 }
 console.log(findMax([1, 2, 3, 4, 5])); // Output: 5
 
-//string manipulation with resursion
+//string manipulation with resursion------------------------------------------------------------------------------
 // 5.
 function string(s){
      if (s==""){
@@ -72,7 +72,7 @@ function palindrome(s) {
 
 console.log(palindrome("racecar"));    
 
-//Recursion search
+//Recursion search----------------------------------------------------------------------------------------
 // 7.
 function binarySearch(arr, target, left = 0, right = arr.length - 1) {
     if (left > right) {
@@ -124,7 +124,7 @@ console.log(countOccurrences(array4, 3)); // Output: 1
 
 
 
-// Tree Traversal (optional)
+// Tree Traversal (optional)--------------------------------------------------------------------------------------------
 // 9.
 class TreeNode {
     constructor(value) {

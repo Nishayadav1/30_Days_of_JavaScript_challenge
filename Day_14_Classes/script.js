@@ -112,7 +112,7 @@ personInstance.fullName = "Jane Smith";
 console.log(personInstance.fullName); // Outputs: "Jane Smith"
 
 
-//Private Feield(optional)
+//Private Feield(optional)------------------------------------------------------------------------------
 // 9.
 class Account {
     // Private field for balance

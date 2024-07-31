@@ -82,7 +82,7 @@ function clousreLoop(n){
 let fun =clousreLoop(5);
 fun.forEach(index=>index())
 
-//module patten
+//module patten----------------------------------------------------------------------
 // 6.
 function createItemManager() {
     let items = []; // Private array to hold items
