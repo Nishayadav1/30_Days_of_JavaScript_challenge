@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Form Data to sessionStorage</title>
+</head>
+<body>
+    <h1>Save User Input to sessionStorage</h1>
+    <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Saved Data:</h2>
+    <div id="savedData"></div>
+
+    <script>
+        // Function to save form data to sessionStorage
+        function saveFormData(event) {
+            event.preventDefault(); // Prevent form from submitting
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            // Create an object to store the data
+            const userData = { name, email };
+
+            // Save the object to sessionStorage as a JSON string
+            sessionStorage.setItem('userData', JSON.stringify(userData));
+
+            // Display the saved data
+            displaySavedData();
+        }
+
+        // Function to display saved data
+        function displaySavedData() {
+            const savedDataDiv = document.getElementById('savedData');
+            const userDataJSON = sessionStorage.getItem('userData');
+
+            if (userDataJSON) {
+                const userData = JSON.parse(userDataJSON);
+                savedDataDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${userData.name}</p>
+                    <p><strong>Email:</strong> ${userData.email}</p>
+                `;
+            } else {
+                savedDataDiv.innerHTML = '<p>No data saved.</p>';
+            }
+        }
+
+        // Add event listener to the form
+        document.getElementById('userForm').addEventListener('submit', saveFormData);
+
+        // Display saved data on page load
+        window.onload = displaySavedData;
+
+
+
+
+
+        // remove sessionStorage -----------------------------
+        // Function to log all sessionStorage content
+        function logSessionStorage() {
+            console.log('sessionStorage content:');
+            for (let i = 0; i < sessionStorage.length; i++) {
+                let key = sessionStorage.key(i);
+                console.log(`${key}: ${sessionStorage.getItem(key)}`);
+            }
+        }
+
+        // Add a sample item to sessionStorage for demonstration purposes
+        sessionStorage.setItem('sampleItem', 'This is a sample item');
+        sessionStorage.setItem('anotherItem', 'This is another item');
+
+        // Log sessionStorage content before removal
+        console.log('Before removal:');
+        logSessionStorage();
+
+        // Remove an item from sessionStorage
+        sessionStorage.removeItem('sampleItem');
+
+        // Log sessionStorage content after removal
+        console.log('After removal:');
+        logSessionStorage();
+    </script>
+</body>
+</html>
