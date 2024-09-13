@@ -1,20 +1,26 @@
 const products = [
     {
         name: "Product 1",
-        price: 19.99,
+        price: 1499, // Price in INR
         description: "This is the description for Product 1.",
         image: "./p1.webp"
     },
     {
         name: "Product 2",
-        price: 29.99,
+        price: 1999, // Price in INR
         description: "This is the description for Product 2.",
         image: "./p2.avif"
     },
     {
         name: "Product 3",
-        price: 39.99,
+        price: 2999, // Price in INR
         description: "This is the description for Product 3.",
+        image: "./p3.jpeg"
+    },
+    {
+        name: "Product 4",
+        price: 3500, // Price in INR
+        description: "This is the description for Product 4.",
         image: "./p3.jpeg"
     }
 ];
@@ -33,7 +39,7 @@ function displayProducts() {
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
-            <p>$${product.price.toFixed(2)}</p>
+            <p>₹${product.price.toFixed(2)}</p>
             <button class="add-to-cart-btn">Add to Cart</button>
         `;
 
@@ -62,6 +68,10 @@ function addToCart(product) {
     displayCart();
 }
 
+function calculateTotalPrice() {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+}
+
 function displayCart() {
     const cartSection = document.getElementById('shopping-cart');
     cartSection.innerHTML = '<h2>Your Cart</h2>';
@@ -72,7 +82,7 @@ function displayCart() {
 
         cartItem.innerHTML = `
             <h3>${item.name}</h3>
-            <p>$${item.price.toFixed(2)} x ${item.quantity}</p>
+            <p>₹${item.price.toFixed(2)} x ${item.quantity}</p>
             <div>
                 <button class="increase-btn">+</button>
                 <button class="decrease-btn">-</button>
@@ -82,6 +92,13 @@ function displayCart() {
 
         cartSection.appendChild(cartItem);
     });
+
+    // Display Total Price
+    const totalPrice = calculateTotalPrice();
+    const totalPriceElement = document.createElement('div');
+    totalPriceElement.className = 'total-price';
+    totalPriceElement.innerHTML = `<h3>Total Price: ₹${totalPrice.toFixed(2)}</h3>`;
+    cartSection.appendChild(totalPriceElement);
 }
 
 document.getElementById('shopping-cart').addEventListener('click', function(e) {
